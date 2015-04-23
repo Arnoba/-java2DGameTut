@@ -15,16 +15,18 @@ public class Ball{
 	
 	void move(){
 		if(y + ya < 0)
-			ya = 1;
+			ya = 2;
 		if(y + ya > game.getHeight()-DIAMETER)
-			ya = -1;
+			ya = -2;
 		if(x + xa < 0)
 			game.gameOver();
 		if(x + xa > game.getWidth()-DIAMETER)
 			game.gameOver();
 		if(playercollision()){
-			xa = 1;
-			x = 10 + DIAMETER;
+			xa = 2;
+			x = DIAMETER;
+			System.out.println("player: " + game.player1.getX());
+			System.out.println("comp" + game.comp.getX());
 		}
 		if(compcollision()){
 			xa = -1;

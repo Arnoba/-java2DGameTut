@@ -25,9 +25,11 @@ public class Racquet{
 	
 	public void paint(Graphics2D g, int player){
 		if(player == 1)
-			g.fillRect(10, y, width, height);
+			x = 10;
+			g.fillRect(x, y, width, height);
 		if(player == 2)
-			g.fillRect(game.getWidth()-10, y, width, height);
+			x = game.getWidth()-20;
+			g.fillRect(x, y, width, height);
 	}
 	
 	public void keyReleased(KeyEvent e){
@@ -35,9 +37,9 @@ public class Racquet{
 	}
 	public void keyPressed(KeyEvent e){
 		if(e.getKeyCode() == KeyEvent.VK_UP)
-			ya = -1;
+			ya = -2;
 		if(e.getKeyCode() == KeyEvent.VK_DOWN)
-			ya = 1;
+			ya = 2;
 	}
 	public Rectangle getBounds(int player){	
 		if(player == 1)
@@ -48,7 +50,7 @@ public class Racquet{
 	public int getTopY(){
 		return y;
 	}
-	public int getTopX(){
-		return x;
+	public int getX(){
+		return this.x;
 	}
 }

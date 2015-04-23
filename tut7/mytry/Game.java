@@ -29,7 +29,7 @@ public class Game extends JPanel{
 	
 	private void move(){
 		ball.move();
-		player1.move();
+		player1.move(ball.getY());
 		comp.move(ball.getY());
 	}
 	
